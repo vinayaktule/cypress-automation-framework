@@ -1,0 +1,4 @@
+{
+    "customerDropDown":"#userSelect",
+    "loginBtn":".btn-default"
+}

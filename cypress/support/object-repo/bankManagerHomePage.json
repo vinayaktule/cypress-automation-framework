@@ -1,0 +1,12 @@
+{
+    "inputFirstName":"[placeholder='First Name']",
+    "inputLastName":"[placeholder='Last Name']",
+    "inputPostCode":"[placeholder='Post Code']",
+    "addCustomerSubmitBtn":"button[type='submit']",
+    "searchCustomer":"input[placeholder='Search Customer']",
+    "trFirstName":"table > tbody > tr td:nth-of-type(1)",
+    "trLastName":"table > tbody > tr td:nth-of-type(2)",
+    "trPostCode":"table > tbody > tr td:nth-of-type(3)",
+    "trAccountNumbers":"table > tbody > tr td:nth-of-type(4)",
+    "trDeleteBtn":"table > tbody > tr td:nth-of-type(5) > button"
+}

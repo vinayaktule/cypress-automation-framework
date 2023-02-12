@@ -1,0 +1,6 @@
+{
+    "welcomeName":".fontBig.ng-binding",
+    "accountNumber":"#accountSelect",
+    "bankLabels":".center",
+    "bankOperations":".btn-lg.tab"
+}
