@@ -11,9 +11,9 @@ describe('Customer CRUD Operations',()=>{
     })
     
     it("Bank Manager Home Page navigation & Verification : ",()=>{
-        bankManagerHomePage.addCustomer();
-        bankManagerHomePage.openAccount();
-        bankManagerHomePage.showCustomers();
+        bankManagerHomePage.clickAddCustomer();
+        bankManagerHomePage.clickOpenAccount();
+        bankManagerHomePage.clickShowCustomers();
     })
 
     it("Create customer verification : ",()=>{
@@ -21,9 +21,9 @@ describe('Customer CRUD Operations',()=>{
         let lastname = faker.name.lastName();
         let postcode = faker.address.zipCode();
         cy.log("Information details:"+firstname+" "+lastname+" "+postcode);
-        bankManagerHomePage.addCustomer();
-        bankManagerHomePage.createCustomer(firstname, lastname, postcode);
-        bankManagerHomePage.verifyCreatedCustomer(firstname, lastname, postcode);
+        bankManagerHomePage.clickAddCustomer()
+            .createCustomer(firstname, lastname, postcode)
+            .verifyCreatedCustomer(firstname, lastname, postcode);
     });
 
     it("Delete customer verification : ",()=>{
@@ -31,10 +31,29 @@ describe('Customer CRUD Operations',()=>{
         let lastname = faker.name.lastName();
         let postcode = faker.address.zipCode();
         cy.log("Information details:"+firstname+" "+lastname+" "+postcode);
-        bankManagerHomePage.addCustomer();
-        bankManagerHomePage.createCustomer(firstname, lastname, postcode);
-        bankManagerHomePage.verifyDeleteCustomer(firstname, lastname, postcode);
+        bankManagerHomePage.clickAddCustomer()
+            .createCustomer(firstname, lastname, postcode)
+            .clickShowCustomers()
+            .deleteSearchedCustomer(firstname)
+            .verifyDeleteCustomer(firstname);
     });
+
+    it("Open Account for customer", ()=>{
+        let firstname = faker.name.firstName();
+        let lastname = faker.name.lastName();
+        let fullname = firstname+" "+lastname;
+        let postcode = faker.address.zipCode();
+        let currency = ['Rupee', 'Dollar', 'Pound'];
+        let value = Math.floor(Math.random() * currency.length);
+        let randomCurrency = currency[value];
+        cy.log("random currency:"+value+": " +randomCurrency);
+        cy.log("Information details:"+firstname+" "+lastname+" "+postcode);
+        bankManagerHomePage.clickAddCustomer()
+            .createCustomer(firstname, lastname, postcode)
+            .clickOpenAccount()
+            .openAccountForCustomer(fullname, randomCurrency);
+    })
+
 
 
 })

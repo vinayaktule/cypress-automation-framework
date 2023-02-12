@@ -5,13 +5,11 @@ class CustomerPage{
     selectCustomerDefault(){
         cy.get('select').select('Harry Potter')
             .should("contain.text", "Harry Potter");
-        // cy.get(customerPageOR.customerDropDown).select('Harry Potter')
-        //.should("contain.text", "Harry Potter");
         return this;
     }
 
     selectCustomerDDT(customer){
-        cy.get(customerPageOR.customerDropDown).select(customer);
+        cy.get('select').select(customer);
         return this;
     }
 

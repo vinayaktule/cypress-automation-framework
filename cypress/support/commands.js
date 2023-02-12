@@ -25,3 +25,16 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 
 /// <reference types="cypress" />
+
+Cypress.Commands.add('getIframe', (iframe) => {
+    return cy.get(iframe)
+        .its('0.contentDocument.body')
+        .should('be.visible')
+        .then(cy.wrap);
+});
+
+//Custom command for clicking on link using label
+Cypress.Commands.add('clickText', (text) => {
+    //cy.get('a[href*="' + label + '"]').click();
+    cy.contains(text).click();
+});

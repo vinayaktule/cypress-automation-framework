@@ -4,14 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:open": "npx cypress open",
-    "test:run": "npx cypress run"
+    "test:open":"node_modules/.bin/cypress open",
+    "test:run":"npx cypress run",
+    "test:chrome":"npx cypress run --headless --spec=./test/e2e/**/*.spec.js --browser chrome",
+    "delete:reports": "rm cypress/reports/* || true"
   },
   "author": "VT",
   "license": "ISC",
   "devDependencies": {
     "@faker-js/faker": "^7.6.0",
     "cypress": "^12.5.1",
+    "cypress-mochawesome-reporter": "^3.3.0",
     "typescript": "^4.9.5"
   }
 }

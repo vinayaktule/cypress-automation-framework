@@ -1,5 +1,5 @@
 describe('template spec', () => {
-  it('passes', () => {
+  xit('passes', () => {
     cy.visit('https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login')
   })
 })

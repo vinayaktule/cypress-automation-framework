@@ -2,7 +2,7 @@
     "inputFirstName":"[placeholder='First Name']",
     "inputLastName":"[placeholder='Last Name']",
     "inputPostCode":"[placeholder='Post Code']",
-    "addCustomerSubmitBtn":"button[type='submit']",
+    "submitBtn":"button[type='submit']",
     "searchCustomer":"input[placeholder='Search Customer']",
     "trFirstName":"table > tbody > tr td:nth-of-type(1)",
     "trLastName":"table > tbody > tr td:nth-of-type(2)",
