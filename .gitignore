@@ -1,7 +1,9 @@
 node_modules
 node_modules
 mochawesome-report/
-results/
+# results/
 videos/
-reports/
-screenshots/
+# reports/
+# screenshots/
+# allure-results/
+# allure-reports/

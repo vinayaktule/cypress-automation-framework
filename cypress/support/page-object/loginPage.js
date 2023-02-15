@@ -8,17 +8,17 @@ class LoginPage {
 
     verifyPageContent() { 
         cy.get(loginPageOR.heading).should('be.visible').and('have.text', 'XYZ Bank');
-        cy.contain('Customer Login').should('be.visible');
-        cy.contain('Bank Manager Login').should('be.visible');
+        cy.contains('Customer Login').should('be.visible');
+        cy.contains('Bank Manager Login').should('be.visible');
         return this;
     }
 
     navigateToCustomerLogin() {
-        cy.contains('Customer Login').click();
+        cy.clickText('Customer Login');
     }
 
     navigateToBankManageLogin() {
-        cy.contains('Bank Manager Login').click();
+        cy.clickText('Bank Manager Login');
     }
 }
 export default new LoginPage;

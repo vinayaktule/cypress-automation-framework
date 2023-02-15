@@ -1,11 +1,13 @@
 import LoginPage from "../../support/page-object/loginPage";
 
 beforeEach('Login to Application',()=>{
-    cy.visit('https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login')
+    cy.visit('/');
 })
 
-describe("LoginPage", () => {
+describe("Login Page content Verification", () => {
     it("should load login page", () => {
-        LoginPage.verifyTitle();
+        LoginPage.verifyTitle()
+            .verifyPageContent()
+            .navigateToCustomerLogin();
     });
 });

@@ -6,17 +6,17 @@ import { faker } from '@faker-js/faker';
 describe('Customer CRUD Operations',()=>{
 
     beforeEach('Login to Application',()=>{
-        cy.visit('https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login')
+        cy.visit('/')
         loginPage.navigateToBankManageLogin();
     })
     
-    it("Bank Manager Home Page navigation & Verification : ",()=>{
+    it("Bank Manager Home Page navigation & Verification",()=>{
         bankManagerHomePage.clickAddCustomer();
         bankManagerHomePage.clickOpenAccount();
         bankManagerHomePage.clickShowCustomers();
     })
 
-    it("Create customer verification : ",()=>{
+    it("Create customer verification",()=>{
         let firstname = faker.name.firstName();
         let lastname = faker.name.lastName();
         let postcode = faker.address.zipCode();
@@ -26,7 +26,7 @@ describe('Customer CRUD Operations',()=>{
             .verifyCreatedCustomer(firstname, lastname, postcode);
     });
 
-    it("Delete customer verification : ",()=>{
+    it("Delete customer verification",()=>{
         let firstname = faker.name.firstName();
         let lastname = faker.name.lastName();
         let postcode = faker.address.zipCode();
@@ -53,7 +53,4 @@ describe('Customer CRUD Operations',()=>{
             .clickOpenAccount()
             .openAccountForCustomer(fullname, randomCurrency);
     })
-
-
-
 })

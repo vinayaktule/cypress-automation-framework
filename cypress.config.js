@@ -1,4 +1,5 @@
 const { defineConfig } = require("cypress");
+const allureWriter = require('@shelex/cypress-allure-plugin/writer');
 
 module.exports = defineConfig({
   reporter: "cypress-mochawesome-reporter", //for html reports
@@ -9,11 +10,25 @@ module.exports = defineConfig({
     inlineAssets: true,
     saveAllAttempts: false,
   },
-  e2e: {
+
+  viewportWidth: 1920,
+    viewportHeight: 1024,
+    defaultCommandTimeout: 30000,
+    requestTimeout: 20000,
+    responseTimeout: 30000,
+    pageLoadTimeout: 60000,
+    video: false,
+    watchForFileChanges: false,
+    retries: {
+        runMode: 2,
+    },
+    e2e: {
+    baseUrl : "https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login",
     setupNodeEvents(on, config) {
-      // implement node event listeners here
       this.screenshotOnRunFailure=true
-      require('cypress-mochawesome-reporter/plugin')(on) // for reports
+      require('cypress-mochawesome-reporter/plugin')(on) // for html mochawesome reports
+      allureWriter(on, config);                          // for allure reports
+            return config;
     },
   },
 });

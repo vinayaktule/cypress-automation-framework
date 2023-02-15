@@ -33,8 +33,7 @@ Cypress.Commands.add('getIframe', (iframe) => {
         .then(cy.wrap);
 });
 
-//Custom command for clicking on link using label
+//Custom command for clicking on link using text
 Cypress.Commands.add('clickText', (text) => {
-    //cy.get('a[href*="' + label + '"]').click();
     cy.contains(text).click();
 });

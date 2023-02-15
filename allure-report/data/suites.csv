@@ -1,0 +1,8 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"skipped","Wed Feb 15 22:12:29 IST 2023","Wed Feb 15 22:12:29 IST 2023","2","","template spec","","","","passes",""
+"passed","Wed Feb 15 22:12:32 IST 2023","Wed Feb 15 22:12:36 IST 2023","3937","","Customer CRUD Operations","","","","Bank Manager Home Page navigation & Verification",""
+"passed","Wed Feb 15 22:12:43 IST 2023","Wed Feb 15 22:12:46 IST 2023","3524","","Customer CRUD Operations","","","","Open Account for customer",""
+"passed","Wed Feb 15 22:12:51 IST 2023","Wed Feb 15 22:12:52 IST 2023","1530","","Login Page content Verification","","","","should load login page",""
+"passed","Wed Feb 15 22:12:36 IST 2023","Wed Feb 15 22:12:39 IST 2023","3478","","Customer CRUD Operations","","","","Create customer verification",""
+"passed","Wed Feb 15 22:12:47 IST 2023","Wed Feb 15 22:12:50 IST 2023","2699","","Customer Page Test","","","","Customer Home Page content verification using DDT",""
+"passed","Wed Feb 15 22:12:39 IST 2023","Wed Feb 15 22:12:43 IST 2023","3748","","Customer CRUD Operations","","","","Delete customer verification",""
