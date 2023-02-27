@@ -37,3 +37,20 @@ Cypress.Commands.add('getIframe', (iframe) => {
 Cypress.Commands.add('clickText', (text) => {
     cy.contains(text).click();
 });
+
+Cypress.Commands.add("loginAppUI", (email, password) => {
+    cy.visit("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
+    cy.get('[name=username]').type(email);
+    cy.get('[name=password]').type(password);
+    cy.get('[type=submit]').click();
+})
+
+Cypress.Commands.add("loginAppSession", (email, password) => {
+    cy.session([email,password], () => {
+        cy.visit("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
+        cy.get('[name=username]').type(email);
+        cy.get('[name=password]').type(password);
+        cy.get('[type=submit]').click();
+    });
+})
+

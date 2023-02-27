@@ -44,8 +44,8 @@ describe('Customer CRUD Operations',()=>{
         let fullname = firstname+" "+lastname;
         let postcode = faker.address.zipCode();
         let currency = ['Rupee', 'Dollar', 'Pound'];
-        let value = Math.floor(Math.random() * currency.length);
-        let randomCurrency = currency[value];
+        let index = Math.floor(Math.random() * currency.length);
+        let randomCurrency = currency[index];
         cy.log("random currency:"+value+": " +randomCurrency);
         cy.log("Information details:"+firstname+" "+lastname+" "+postcode);
         bankManagerHomePage.clickAddCustomer()

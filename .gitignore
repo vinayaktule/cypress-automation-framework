@@ -1,9 +1,11 @@
 node_modules
 node_modules
 mochawesome-report/
-# results/
+results/
 videos/
-# reports/
-# screenshots/
-# allure-results/
-# allure-reports/
+reports/
+screenshots/
+allure-results/
+allure-reports/
+allure-report/export/influxDbData.txt
+cypress/reports/html/index.html

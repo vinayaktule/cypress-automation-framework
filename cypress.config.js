@@ -24,11 +24,19 @@ module.exports = defineConfig({
     },
     e2e: {
     baseUrl : "https://www.globalsqa.com/angularJs-protractor/BankingProject/#/login",
+    experimentalsessionsupport : true,
     setupNodeEvents(on, config) {
       this.screenshotOnRunFailure=true
       require('cypress-mochawesome-reporter/plugin')(on) // for html mochawesome reports
       allureWriter(on, config);                          // for allure reports
             return config;
     },
+
+    env:{
+      "devUrl":"www.devurl.com",
+      "qaUrl":"www.qaurl.com",
+      "stagingUrl":"www.stagingurl.com",
+      "productionUrl":"www.productionurl.com"
+    }
   },
 });

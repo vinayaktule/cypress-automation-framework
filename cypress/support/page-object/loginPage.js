@@ -20,5 +20,14 @@ class LoginPage {
     navigateToBankManageLogin() {
         cy.clickText('Bank Manager Login');
     }
+
+
+    
+    loginToApp(username, password){
+        cy.get('#username').type(username.toLowerCase());
+        cy.get('#password').type(password.toLowerCase());
+        cy.get('#Login').click();
+
+    }
 }
 export default new LoginPage;
