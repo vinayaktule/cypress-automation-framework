@@ -12,14 +12,14 @@
     "allure:clear": "rm -r allure-results/ allure-report cypress/screenshots || true",
     "allure:history": "mv -f allure-report/history allure-results/history && rm -r allure-report || true",
     "cy:run": "cypress run --env allure=true, allureResultsPath= /allure-results",
-    "cy:parallel" : "cypress-parallel -s cy:run -t 2 -d cypress/e2e/"
+    "cy:parallel": "cypress-parallel -s cy:run -t 2 -d cypress/e2e/"
   },
   "author": "VT",
   "license": "ISC",
   "devDependencies": {
     "@faker-js/faker": "^7.6.0",
     "@shelex/cypress-allure-plugin": "^2.35.2",
-    "cypress": "^12.5.1",
+    "cypress": "^12.6.0",
     "cypress-mochawesome-reporter": "^3.3.0",
     "typescript": "^4.9.5"
   },
